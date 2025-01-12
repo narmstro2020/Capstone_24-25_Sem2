@@ -15,11 +15,12 @@
 ## Review
 
 - Brief Recap of Previous Lesson on the ToDo App
-- 
+
 ## Relevant Instruction
 
 - [Notes](Notes.md)
 - [Video](https://youtu.be/GNHGUMTX800)
+- Please See Example Code in this block
 
 ## Interactive, Ownership, Resonate
 

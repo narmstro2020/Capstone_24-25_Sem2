@@ -16,26 +16,27 @@ This tutorial will guide you through building a simple To-Do List application us
 ---
 
 ## `index.html`
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vanilla JS To-Do App</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Vanilla JS To-Do App</h1>
-    <div class="todo-input">
-      <input type="text" id="task-input" placeholder="Add a new task">
-      <button id="add-task-btn">Add Task</button>
-    </div>
-    <ul id="task-list"></ul>
-  </div>
-  <script src="script.js"></script>
-</body>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Vanilla JS To-Do App</title>
+      <link rel="stylesheet" href="../Block%2001/Example%20Code/styles/styles.css">
+   </head>
+   <body>
+      <div class="container">
+         <h1>Vanilla JS To-Do App</h1>
+         <div class="todo-input">
+            <input type="text" id="task-input" placeholder="Add a new task">
+            <button id="add-task-btn">Add Task</button>
+         </div>
+         <ul id="task-list"></ul>
+      </div>
+      <script src="../Block%2001/Example%20Code/scripts/script.js"></script>
+   </body>
 </html>
 ```
 

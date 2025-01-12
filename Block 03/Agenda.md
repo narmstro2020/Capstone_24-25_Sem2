@@ -19,7 +19,7 @@
 ## Relevant Instruction
 
 - [Notes](Notes.md)
-- [Video]()
+- [Video](https://youtu.be/GNHGUMTX800)
 
 ## Interactive, Ownership, Resonate
 

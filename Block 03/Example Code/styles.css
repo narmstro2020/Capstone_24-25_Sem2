@@ -1,0 +1,29 @@
+:root{
+    --blue: #007bff;
+    --red: #ff0000;
+    --green: #007bff;
+    --box-width: 100px;
+    --box-height: 100px;
+    --container-background-color: whitesmoke;
+}
+
+.container{
+    background-color: var(--container-background-color);
+}
+
+.box{
+    width: var(--box-width);
+    height: var(--box-height);
+}
+
+#red{
+    background-color: red;
+}
+
+#green{
+    background-color: green;
+}
+
+#blue{
+    background-color: blue;
+}

@@ -1,5 +1,5 @@
 
-# Block 5 Agenda
+# Block 7 Agenda
 - Black Day: Thu, 1/23/2025
 - Gold Day: Fri, 1/24/2025
 

@@ -1,130 +1,156 @@
-# JavaScript in the Browser: A Complete Guide
+# JavaScript Functional Programming Tutorial
 
-## 1. Introduction to JavaScript in the Browser
-
-### What is JavaScript in the Browser?
-JavaScript in the browser allows developers to manipulate web pages, interact with users, and perform dynamic updates without needing to reload the page. This is achieved using the **Document Object Model (DOM)** and the **Browser Object Model (BOM)**.
-
-### How JavaScript Interacts with Web Pages
-JavaScript interacts with web pages in the following ways:
-- Manipulating HTML and CSS using the DOM
-- Handling user input via event listeners
-- Storing data using cookies, local storage, or session storage
-- Communicating with external servers via APIs
-- Controlling browser behaviors using BOM
+## Introduction
+Functional programming (FP) is a programming paradigm that treats computation as the evaluation of mathematical functions and avoids changing state and mutable data. JavaScript supports functional programming concepts, making it a powerful language for functional-style coding.
 
 ---
 
-## 2. The Browser Object Model (BOM)
-### What is BOM?
-The **Browser Object Model (BOM)** represents additional objects provided by the browser to control the browser itself. Unlike the DOM, which focuses on page structure, BOM enables JavaScript to interact with browser functionality.
+## 1. Vocabulary
 
-### Key BOM Objects and Methods
-#### 1. `window` Object
-The `window` object is the global object in JavaScript. Some important properties and methods include:
-```javascript
-console.log(window.innerWidth);  // Get the width of the browser window
-alert("Hello, world!");          // Display an alert box
-```
-
-#### 2. Working with Alerts, Confirm, and Prompt
-```javascript
-alert("This is an alert message.");
-const userConfirmed = confirm("Do you agree?");
-const userInput = prompt("Enter your name:");
-console.log(userInput);
-```
-
-#### 3. Navigating with `location`
-```javascript
-console.log(window.location.href);  // Get the current URL
-window.location.href = "https://www.example.com"; // Redirect to another URL
-```
-
-#### 4. Managing Browser History
-```javascript
-history.back();  // Go to the previous page
-history.forward(); // Go to the next page
-```
+- **First-Class Functions**: Functions that can be assigned to variables, passed as arguments, and returned from other functions.
+- **Higher-Order Functions**: Functions that take other functions as arguments or return them as results.
+- **Pure Functions**: Functions that always produce the same output for the same input and have no side effects.
+- **Side Effects**: Any operation that modifies a state outside its local scope, such as modifying global variables or I/O operations.
+- **Function Composition**: The process of combining multiple functions to build more complex ones.
+- **Currying**: Transforming a function with multiple arguments into a series of functions, each taking a single argument.
+- **Partial Application**: Pre-filling some arguments of a function to create a new function.
+- **Immutable Data**: Data that cannot be changed after it's created.
 
 ---
 
-## 3. Working with Cookies
-### What are Cookies?
-Cookies are small pieces of data stored in the browser to retain user information.
+## 2. Higher-Order Functions
+### Definition
+Higher-order functions (HOFs) are functions that either accept functions as parameters or return functions.
 
-### Creating, Reading, and Deleting Cookies
+### Example
 ```javascript
-// Creating a cookie
-document.cookie = "username=JohnDoe; expires=Fri, 31 Dec 2025 12:00:00 UTC; path=/";
+function higherOrderFunction(callback) {
+    return callback();
+}
 
-// Reading cookies
-console.log(document.cookie);
+function sayHello() {
+    return "Hello, World!";
+}
 
-// Deleting a cookie
-document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+console.log(higherOrderFunction(sayHello)); // Output: Hello, World!
+```
+
+### Assignment
+**Task**: Implement a function `applyOperation` that takes two numbers and a callback function to perform an operation on them.
+
+```javascript
+function applyOperation(a, b, operation) {
+    return operation(a, b);
+}
+
+function add(x, y) {
+    return x + y;
+}
+
+console.log(applyOperation(5, 3, add)); // Output: 8
 ```
 
 ---
 
-## 4. Local Storage and Session Storage
-### Differences Between Local and Session Storage
-| Feature         | Local Storage | Session Storage |
-|---------------|--------------|----------------|
-| Data Persistence | Persistent | Until session ends |
-| Capacity        | 5MB          | 5MB              |
+## 3. Functional Utilities: Map, Reduce, and Filter
 
-### Using Local Storage
+### Map
+Used to transform each element in an array.
 ```javascript
-// Storing data
-localStorage.setItem("username", "JohnDoe");
-
-// Retrieving data
-console.log(localStorage.getItem("username"));
-
-// Removing data
-localStorage.removeItem("username");
+const numbers = [1, 2, 3, 4];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); // Output: [2, 4, 6, 8]
 ```
 
-### Using Session Storage
+### Filter
+Used to filter elements based on a condition.
 ```javascript
-sessionStorage.setItem("theme", "dark");
-console.log(sessionStorage.getItem("theme"));
-sessionStorage.removeItem("theme");
+const evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log(evenNumbers); // Output: [2, 4]
 ```
 
----
-
-## 5. Timers in JavaScript
-### `setTimeout` and `setInterval`
-#### `setTimeout`: Executes a function after a delay
+### Reduce
+Used to accumulate values in an array.
 ```javascript
-setTimeout(() => {
-    console.log("This message appears after 3 seconds");
-}, 3000);
+const sum = numbers.reduce((acc, num) => acc + num, 0);
+console.log(sum); // Output: 10
 ```
 
-#### `setInterval`: Executes a function repeatedly at intervals
+### Assignment
+**Task**: Implement a function that takes an array of numbers and returns the sum of all even numbers.
 ```javascript
-let count = 0;
-const interval = setInterval(() => {
-    count++;
-    console.log("Count: " + count);
-    if (count === 5) clearInterval(interval);
-}, 1000);
+function sumEvenNumbers(arr) {
+    return arr.filter(num => num % 2 === 0).reduce((sum, num) => sum + num, 0);
+}
+
+console.log(sumEvenNumbers([1, 2, 3, 4, 5, 6])); // Output: 12
 ```
 
 ---
 
-## 6. The Geolocation API
-### Retrieving the User’s Location
+## 4. Pure Functions and Side Effects
+
+### Pure Functions
+A function is pure if it:
+1. Always produces the same output for the same input.
+2. Has no side effects.
+
+Example:
 ```javascript
-navigator.geolocation.getCurrentPosition(position => {
-    console.log("Latitude: " + position.coords.latitude);
-    console.log("Longitude: " + position.coords.longitude);
-}, error => {
-    console.error("Error getting location: ", error);
-});
+function pureAdd(a, b) {
+    return a + b;
+}
+```
+
+### Side Effects
+A function with side effects modifies external state.
+```javascript
+let counter = 0;
+function increment() {
+    counter++;
+}
 ```
 
 ---
+
+## 5. Function Composition
+Combining multiple functions into one.
+```javascript
+const multiplyBy2 = num => num * 2;
+const subtract3 = num => num - 3;
+const compose = (f, g) => x => f(g(x));
+
+const newFunction = compose(multiplyBy2, subtract3);
+console.log(newFunction(5)); // Output: 4
+```
+
+---
+
+## 6. Currying and Partial Application
+
+### Currying
+Transforms a function into a sequence of unary functions.
+```javascript
+const curriedAdd = a => b => a + b;
+console.log(curriedAdd(3)(4)); // Output: 7
+```
+
+### Partial Application
+Pre-filling some arguments.
+```javascript
+const multiply = (a, b) => a * b;
+const double = multiply.bind(null, 2);
+console.log(double(5)); // Output: 10
+```
+---
+
+## Summary
+- Higher-order functions allow flexibility in function design.
+- `map`, `reduce`, and `filter` are essential functional utilities.
+- Pure functions help maintain predictable behavior.
+- Function composition enables modularity.
+- Currying and partial application enable reusable function patterns.
+
+
+
+This tutorial covers essential functional programming concepts in JavaScript, providing clear explanations, examples, and assignments with solutions. Happy coding!

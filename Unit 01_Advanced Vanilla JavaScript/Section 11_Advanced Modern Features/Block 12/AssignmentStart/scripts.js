@@ -1,4 +1,8 @@
-const user1 = { address: { city: "New York" } };
+const user1 = {
+    address: {
+        city: "New York"
+    }
+};
 const user2 = {};
 
 // TODO: Define getUserCity here.

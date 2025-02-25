@@ -22,11 +22,3 @@
 
 - Create a `Card.jsx` component.
 - Pass in a title, description, and a button label as props.
-
-
-### Assignment: Dynamic Greeting Message Component
-
-**Task:**
-
-- Create a component `Greeting.jsx` that takes `name` and `isMorning` as props.
-- Display a greeting like "Good Morning, [name]" or "Good Evening, [name]".

@@ -21,7 +21,7 @@ JSX allows developers to write HTML-like code directly within JavaScript, making
 
 ```jsx
 // App.jsx
-import React from 'react';
+import 'react';
 
 const App = () => {
   return (
@@ -104,7 +104,7 @@ Functional components are the standard way to define React components. They are 
 
 ```jsx
 // Button.jsx
-import React from 'react';
+import 'react';
 
 const Button = ({ label, onClick }) => {
   return (

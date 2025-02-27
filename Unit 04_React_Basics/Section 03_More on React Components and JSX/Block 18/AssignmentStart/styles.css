@@ -1,14 +1,22 @@
-@keyframes flip{
-    0% {transform: rotateY(0deg)}
-    100% {transform: rotateY(180deg)}
+@keyframes flip {
+    0% {
+        transform: rotateY(0deg)
+    }
+    100% {
+        transform: rotateY(180deg)
+    }
 }
 
-@keyframes flipback{
-    0% {transform: rotateY(0deg)}
-    100% {transform: rotateY(180deg)}
+@keyframes flipback {
+    0% {
+        transform: rotateY(0deg)
+    }
+    100% {
+        transform: rotateY(180deg)
+    }
 }
 
-.card{
+.card {
     background-color: black;
     color: white;
     width: 150px;
@@ -19,7 +27,29 @@
 
 }
 
-.card:hover{
+.card:hover {
     background-color: green;
     animation: flip 2s infinite;
+}
+
+button {
+    background-color: green;
+    /*TODO: add an appropriate transition property here*/
+}
+
+button:hover {
+    background-color: blue;
+}
+
+/*TODO: For this tooltip section use another transition*/
+.tooltip {
+
+}
+
+.tooltip .tooltiptext {
+
+}
+
+.tooltip:hover .tooltip-text {
+
 }

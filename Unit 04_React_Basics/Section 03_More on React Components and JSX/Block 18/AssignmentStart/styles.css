@@ -1,0 +1,25 @@
+@keyframes flip{
+    0% {transform: rotateY(0deg)}
+    100% {transform: rotateY(180deg)}
+}
+
+@keyframes flipback{
+    0% {transform: rotateY(0deg)}
+    100% {transform: rotateY(180deg)}
+}
+
+.card{
+    background-color: black;
+    color: white;
+    width: 150px;
+    height: 100px;
+    align-content: center;
+    perspective: 1000px;
+    animation: flipback 2s infinite;
+
+}
+
+.card:hover{
+    background-color: green;
+    animation: flip 2s infinite;
+}

@@ -1,4 +1,4 @@
-const TodoList = ({ todos }) => {
+const TodoList = ({todos}) => {
     return (
         <ul>
             {todos.map(todo => (
@@ -8,4 +8,4 @@ const TodoList = ({ todos }) => {
     );
 };
 
-export default TodoList;
+export default TodoList

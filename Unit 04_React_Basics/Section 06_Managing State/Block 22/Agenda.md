@@ -1,5 +1,5 @@
 
-# Block 21 Agenda
+# Block 22 Agenda
 - Black Day: Fri, 3/7/2025
 - Gold Day: Mon, 3/10/2025
 
@@ -10,7 +10,7 @@
 
 ## Aim
 
-- Working With State
+- Managing State
 
 ## Review
 

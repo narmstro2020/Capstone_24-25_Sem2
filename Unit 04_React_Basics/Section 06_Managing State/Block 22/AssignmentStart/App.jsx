@@ -1,10 +1,13 @@
-import './App.css'
+import ThemeProvider from "./ThemeProvider.jsx";
+import ThemeComponent from "./ThemeComponent.jsx";
 
 export default function App() {
 
-  return (
-    <>
-
-    </>
-  )
+    return (
+        <ThemeProvider>
+            <ThemeComponent/>
+        </ThemeProvider>
+    )
 }
+
+

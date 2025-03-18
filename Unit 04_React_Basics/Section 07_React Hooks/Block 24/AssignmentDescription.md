@@ -1,0 +1,1 @@
+Work through and implement the examples in the notes and submit.  
